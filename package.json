@@ -1,0 +1,17 @@
+{
+  "name": "test-flight",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "search": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peerasak Unsakon <clonezer@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dayjs": "^1.8.15",
+    "puppeteer": "^1.19.0"
+  }
+}
