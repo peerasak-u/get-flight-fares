@@ -24,16 +24,21 @@ const getRedAirlineFares = () => {
             await page.waitForSelector(departSelector);
             console.log('click on input field');
             await page.click(departSelector);
-            await page.waitFor(1000);
+
             console.log('input departure airport');
             await page.keyboard.type(departure);
+            await page.waitForSelector('li[id="home-origin-autocomplete-heatmaplist-0"]');
             await page.keyboard.press('Enter');
             await page.waitFor(1000);
+
             console.log('input destination airport');
             await page.keyboard.type(destination);
+            await page.waitForSelector('li[id="home-destination-autocomplete-heatmaplist-0"]');
+            await page.waitFor(1000);
             await page.keyboard.press('Enter');
         } catch (error) {
             browser.close();
+            console.error(error);
             resolve([]);
         }
 
@@ -55,12 +60,13 @@ const getRedAirlineFares = () => {
                             brand: 'RED'
                         };
                     });
+                    browser.close();
                     resolve(result);
                 } catch (error) {
                     console.error(error);
+                    browser.close();
                     reject(error);
                 }
-                browser.close();
             }
         });
 
