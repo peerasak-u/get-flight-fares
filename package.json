@@ -10,7 +10,7 @@
   "author": "Peerasak Unsakon <clonezer@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "dayjs": "^1.8.15"
   }
 }
